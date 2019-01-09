@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AjoorLiteWebAPI.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -23,6 +24,8 @@ namespace AjoorLiteWebAPI
 
             EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
+
+            config.Filters.Add(new BasicAuthentication());
         }
     }
 }

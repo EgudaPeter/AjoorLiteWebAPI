@@ -7,9 +7,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using AjoorLiteWebAPI.Core;
+using System.Threading;
 
 namespace AjoorLiteWebAPI.Controllers
 {
+    [BasicAuthentication]
     public class CustomerController : ApiController
     {
         static CustomerRepo _CustomerRepo = new CustomerRepo();
@@ -25,7 +27,7 @@ namespace AjoorLiteWebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured.\n\n Error details:\n {ex.Message}");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured. Error details: {ex.Message}");
             }
         }
 
@@ -54,7 +56,7 @@ namespace AjoorLiteWebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured.\n\n Error details:\n {ex.Message}");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured. Error details: {ex.Message}");
             }
         }
 
@@ -69,7 +71,7 @@ namespace AjoorLiteWebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured.\n\n Error details:\n {ex.Message}");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured. Error details: {ex.Message}");
             }
         }
 
@@ -80,7 +82,7 @@ namespace AjoorLiteWebAPI.Controllers
             try
             {
                 customer.FullName = $"{customer.FirstName} {customer.LastName}";
-                customer.CreatedBy = "PIE";
+                customer.CreatedBy = Thread.CurrentPrincipal.Identity.Name;
                 customer.CreatedDate = DateTime.Now;
                 if (_CustomerRepo.AddCustomer(customer))
                 {
@@ -108,7 +110,7 @@ namespace AjoorLiteWebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured.\n\n Error details:\n {ex.Message}");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured. Error details: {ex.Message}");
             }
         }
 
@@ -125,7 +127,7 @@ namespace AjoorLiteWebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured.\n\n Error details:\n {ex.Message}");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured. Error details: {ex.Message}");
             }
         }
     }
