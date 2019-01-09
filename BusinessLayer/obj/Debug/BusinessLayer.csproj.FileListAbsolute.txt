@@ -1,0 +1,14 @@
+C:\AjoorLiteWebAPI\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\AjoorLiteWebAPI\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\AjoorLiteWebAPI\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\AjoorLiteWebAPI\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\AjoorLiteWebAPI\BusinessLayer\bin\Debug\DataLayer.dll
+C:\AjoorLiteWebAPI\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\AjoorLiteWebAPI\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\AjoorLiteWebAPI\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\AjoorLiteWebAPI\BusinessLayer\bin\Debug\DataLayer.dll.config
+C:\AjoorLiteWebAPI\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\AjoorLiteWebAPI\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\AjoorLiteWebAPI\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\AjoorLiteWebAPI\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\AjoorLiteWebAPI\BusinessLayer\obj\Debug\BusinessLayer.pdb
