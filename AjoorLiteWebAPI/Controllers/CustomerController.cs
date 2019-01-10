@@ -104,7 +104,7 @@ namespace AjoorLiteWebAPI.Controllers
             {
                 if (_CustomerRepo.UpdateCustomer(customer))
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK);
+                    return Request.CreateResponse(HttpStatusCode.OK, "Customer updated successfully");
                 }
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured.\n\n Error details:\n Customer record is not updated.");
             }
@@ -116,14 +116,14 @@ namespace AjoorLiteWebAPI.Controllers
 
         [HttpPost]
         [Route("api/deletecustomer")]
-        public HttpResponseMessage Delete(int id)
+        public HttpResponseMessage DeleteCustomer(int id)
         {
             try
             {
                 List<long> IDs = new List<long>();
                 IDs.Add(id);
                 _CustomerRepo.DeleteCustomer(IDs);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                return Request.CreateResponse(HttpStatusCode.OK, "Customer(s) deleted successfully");
             }
             catch (Exception ex)
             {
