@@ -11,12 +11,13 @@ namespace BusinessLayer.Repos
 
         public bool AddCustomer(Customer customer)
         {
+            var accountNumber = GetLastAssignedAccountNumber() + 1;
             var model = new cor_customer()
             {
                 FirstName = customer.FirstName,
                 LastName = customer.LastName,
                 FullName = $"{customer.FirstName} {customer.LastName}",
-                AccountNumber = customer.AccountNumber,
+                AccountNumber = accountNumber,
                 Email = customer.Email,
                 Product = customer.Product,
                 Commission = customer.Commission,

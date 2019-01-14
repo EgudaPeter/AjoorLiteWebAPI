@@ -116,12 +116,10 @@ namespace AjoorLiteWebAPI.Controllers
 
         [HttpPost]
         [Route("api/deletecustomer")]
-        public HttpResponseMessage DeleteCustomer(int id)
+        public HttpResponseMessage DeleteCustomer(List<long>IDs)
         {
             try
             {
-                List<long> IDs = new List<long>();
-                IDs.Add(id);
                 _CustomerRepo.DeleteCustomer(IDs);
                 return Request.CreateResponse(HttpStatusCode.OK, "Customer(s) deleted successfully");
             }
