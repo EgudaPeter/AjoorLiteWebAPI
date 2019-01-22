@@ -116,11 +116,11 @@ namespace AjoorLiteWebAPI.Controllers
 
         [HttpPost]
         [Route("api/deletecustomer")]
-        public HttpResponseMessage DeleteCustomer(List<long>IDs)
+        public HttpResponseMessage DeleteCustomer([FromBody]CUSTOMERIDSOBJECT customerIdsObj)
         {
             try
             {
-                _CustomerRepo.DeleteCustomer(IDs);
+                _CustomerRepo.DeleteCustomer(customerIdsObj.IDs);
                 return Request.CreateResponse(HttpStatusCode.OK, "Customer(s) deleted successfully");
             }
             catch (Exception ex)
@@ -128,5 +128,10 @@ namespace AjoorLiteWebAPI.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, $"An error has occured. Error details: {ex.Message}");
             }
         }
+    }
+
+    public class CUSTOMERIDSOBJECT
+    {
+        public List<long> IDs { get; set; }
     }
 }
